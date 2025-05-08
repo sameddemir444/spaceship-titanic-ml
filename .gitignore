@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+anaconda_projects/
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment folders
+env/
+venv/
+.venv/
+
+# VSCode
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Python packaging
+*.egg-info/
+*.egg
+*.whl
+build/
+dist/
+
+# Data files
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.parquet
+
+# Models
+models/
+*.pkl
+*.joblib
+
+# Environment files
+.env
+.env.*
+
+# Logs and runtime files
+*.log
+
+# System cache and temp
+*.cache
+*.bak
+*.tmp
+
+# Hidden OS folders
+Thumbs.db
