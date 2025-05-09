@@ -2,6 +2,7 @@
 
 This project is part of the Kaggle competition **Spaceship Titanic**.  
 We approach the problem with a professional, real-world machine learning pipeline.
+(https://www.kaggle.com/competitions/spaceship-titanic/overview)
 
 ---
 
@@ -53,10 +54,65 @@ The dataset includes two files:
 
 ---
 
-# Logistic Regression Model (Top 8 Features)
+## Logistic Regression Model – Top 8 Features
 
-- Trained on: 2025-05-09
-- Features used: Spa, VRDeck, RoomService, HomePlanet_Europa, FoodCourt, CryoSleep, ShoppingMall, HomePlanet_Mars
-- ROC-AUC: 0.8647
-- Model path: ../models/logistic_model_top8.pkl
-- Pipeline includes: StandardScaler, OneHotEncoder, LogisticRegression
+We trained a **Logistic Regression model** using a fully optimized scikit-learn pipeline with only the **top 8 most important features**, selected based on **cumulative feature importance (95%)**.
+
+### Model Pipeline
+
+- **Preprocessing:** `StandardScaler` for numerical features, `OneHotEncoder` for categorical features
+- **Model:** `LogisticRegression` tuned with `RandomizedSearchCV`
+- **Hyperparameter Tuning:** 10 iterations, 5-fold cross-validation
+
+### Final Model Metrics
+
+- **ROC-AUC Score:** `0.8647`
+- **F1 Score:** `0.79`
+- **Accuracy:** `0.79`
+
+### Model File
+
+- Trained model saved as: `models/logistic_model_top8.pkl`
+- Includes entire pipeline (preprocessing + estimator)
+- Can be easily loaded via `joblib.load(...)`
+
+### Features Used
+
+| Feature             | Description                        |
+| ------------------- | ---------------------------------- |
+| `Spa`               | Amount spent on spa                |
+| `VRDeck`            | Amount spent on VR deck            |
+| `RoomService`       | Amount spent on room service       |
+| `HomePlanet_Europa` | Binary feature for Europa          |
+| `FoodCourt`         | Amount spent on food court         |
+| `CryoSleep`         | Whether passenger was in cryosleep |
+| `ShoppingMall`      | Amount spent at the shopping mall  |
+| `HomePlanet_Mars`   | Binary feature for Mars            |
+
+---
+
+## Project Structure
+
+spaceship-titanic/
+├── data/
+├── models/
+├── notebooks/
+├── utils/
+├── spaceship_pipeline.py
+└── README.md
+
+---
+
+## How to Run
+
+1. Clone the repository
+2. Install dependencies with: `pip install -r requirements.txt`
+3. Run training: `python spaceship_pipeline.py`
+4. Load model and predict using: `joblib.load("../models/logistic_model_top8.pkl")`
+
+---
+
+## Author
+
+Samed Demir
+[LinkedIn](https://www.linkedin.com/in/samed-demir/)
