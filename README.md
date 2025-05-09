@@ -52,3 +52,11 @@ The dataset includes two files:
 - **Goal:** Predict if a passenger was transported (`True`) or not (`False`)
 
 ---
+
+# Logistic Regression Model (Top 8 Features)
+
+- Trained on: 2025-05-09
+- Features used: Spa, VRDeck, RoomService, HomePlanet_Europa, FoodCourt, CryoSleep, ShoppingMall, HomePlanet_Mars
+- ROC-AUC: 0.8647
+- Model path: ../models/logistic_model_top8.pkl
+- Pipeline includes: StandardScaler, OneHotEncoder, LogisticRegression
